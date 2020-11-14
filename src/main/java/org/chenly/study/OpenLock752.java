@@ -24,6 +24,7 @@ public class OpenLock752 {
 			int size = queue.size();
 			for (int i = 0; i < size; i++) {
 				String poll = queue.poll();
+				//不遍历已经走过的点
 				if (visited.contains(poll)) {
 					continue;
 				}
@@ -34,6 +35,7 @@ public class OpenLock752 {
 					String nextNum = plusOne(poll, j);
 					String nextNum2 = minOne(poll, j);
 
+					//剔除存在的例如 0001 又回拨到0000的场景以及死亡锁
 					if (!visited.contains(nextNum)) {
 						queue.add(nextNum);
 					}
