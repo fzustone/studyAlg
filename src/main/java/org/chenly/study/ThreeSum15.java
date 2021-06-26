@@ -1,4 +1,4 @@
-package org.chenly;
+package org.chenly.study;
 
 import java.util.ArrayList;
 import java.util.Arrays;
